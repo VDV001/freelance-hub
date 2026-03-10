@@ -18,7 +18,6 @@ const envSchema = z.object({
   TELEGRAM_HABR_CHANNEL_ID: z.string().optional(),
   POLL_INTERVAL_RSS: z.coerce.number().default(300),
   POLL_INTERVAL_API: z.coerce.number().default(900),
-  POLL_INTERVAL_HABR: z.coerce.number().default(600),
 });
 
 export const env = envSchema.parse(process.env);

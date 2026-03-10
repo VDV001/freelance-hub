@@ -7,7 +7,11 @@ export function getHabrConfig(): HabrConfig {
     | { value: string }
     | undefined;
   if (row) return JSON.parse(row.value) as HabrConfig;
-  return { ...DEFAULT_HABR_CONFIG };
+  return {
+    hubs: [...DEFAULT_HABR_CONFIG.hubs],
+    includeKeywords: [...DEFAULT_HABR_CONFIG.includeKeywords],
+    excludeKeywords: [...DEFAULT_HABR_CONFIG.excludeKeywords],
+  };
 }
 
 function saveHabrConfig(config: HabrConfig): void {

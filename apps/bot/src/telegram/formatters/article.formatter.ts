@@ -18,13 +18,13 @@ export function formatArticle(article: Omit<Article, 'id' | 'fetchedAt'>): strin
   }
 
   if (article.tags.length > 0) {
-    const tagStr = article.tags.slice(0, 6).map((t) => `#${t.replace(/[\s.]+/g, '_')}`).join(' ');
+    const tagStr = article.tags.slice(0, 6).map((t) => `#${escapeHtml(t.replace(/[\s.]+/g, '_'))}`).join(' ');
     lines.push(tagStr);
   }
 
   lines.push(`📂 ${escapeHtml(article.hub)}`);
   lines.push('');
-  lines.push(`<a href="${article.url}">Читать на Хабре →</a>`);
+  lines.push(`<a href="${escapeHtml(article.url)}">Читать на Хабре →</a>`);
 
   return lines.join('\n');
 }
