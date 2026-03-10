@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "title": "Даниил Вдовин — Fullstack-разработчик",
+    "description": "Middle Fullstack/Backend разработчик. Специализация: Go, Node.js, React. AI-инструменты в рабочем процессе. Екатеринбург, удалённо."
+  },
+  "nav": {
+    "about": "Обо мне",
+    "stack": "Стек",
+    "experience": "Опыт",
+    "projects": "Проекты",
+    "contact": "Контакт"
+  },
+  "hero": {
+    "greeting": "Привет, я",
+    "name": "Даниил Вдовин",
+    "role": "Fullstack-разработчик",
+    "tagline": "Создаю надёжные бэкенды и современные интерфейсы на Go, Node.js — с помощью AI-инструментов.",
+    "cta_contact": "Связаться",
+    "cta_resume": "Скачать CV"
+  },
+  "about": {
+    "title": "Обо мне",
+    "bio": "Fullstack-разработчик с уклоном в Backend (Go & Node.js/NestJS). За полтора года коммерческой практики — два параллельных production-проекта с реальными пользователями. Пишу код, который понимают другие: модульная архитектура, понятные абстракции, покрытие тестами. Умею работать в команде, читать чужой код, задавать вопросы до того, как написал — не после.\n\nИспользую AI как инструмент разработки ежедневно — Claude Code CLI с настроенными MCP-серверами — это рабочий процесс, а не эксперимент. Хочу расти в сторону сложных backend-систем: распределённые архитектуры, производительность, надёжность.",
+    "facts": {
+      "location": "Екатеринбург",
+      "experience": "1.5+ года коммерческой разработки",
+      "russian": "Русский — Родной",
+      "english": "Английский — B1–B2, технический, активно развиваю",
+      "education": "УГГУ, Специалист по большим данным (Computer Vision)"
+    }
+  },
+  "stack": {
+    "title": "Технологии",
+    "categories": {
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "devops": "DevOps & Инфра",
+      "testing": "Тестирование",
+      "ai": "AI & Инструменты"
+    }
+  },
+  "experience": {
+    "title": "Опыт работы",
+    "academic_secretary": {
+      "company": "Мультимедиа Видеосистемы",
+      "role": "Fullstack-разработчик",
+      "period": "Октябрь 2025 — настоящее время",
+      "highlights": [
+        "Вывел в production **несколько независимых модулей с нуля** — каждый с тестами, документацией и CI-пайплайном",
+        "Настроил полный observability stack (Prometheus + Grafana + Loki + OpenTelemetry): **время обнаружения инцидентов — минуты**",
+        "Внедрил Redis-кеширование через Decorator Pattern: **x30 к скорости чтения** без изменений в бизнес-логике",
+        "Реализовал интеграцию с 1C ERP и Telegram Bot: **двусторонняя синхронизация данных без потерь**",
+        "Claude Code (CLI) как основной AI-инструмент: MCP-серверы (Serena, Context7, Playwright, Figma), **AI-driven TDD**, кастомные скилы для debugging и code review"
+      ],
+      "duties_label": "Обязанности",
+      "duties": {
+        "methodology": {
+          "title": "Методологии разработки",
+          "text": "TDD + DDD для проектирования доменной логики: сначала тесты, затем доменные объекты и сервисы. CQRS и Event Sourcing для разделения чтения/записи. RDD для планирования фич. Swagger/OpenAPI документация из Go-аннотаций."
+        },
+        "architecture": {
+          "title": "Архитектура и проектирование",
+          "text": "Модульный монолит на Go: каждый домен инкапсулирован, границы чёткие. In-memory EventBus с абстракцией под Kafka. CQRS + Event Sourcing + Repository + Unit of Work. REST API с унифицированной обработкой ошибок и пагинацией."
+        },
+        "backend": {
+          "title": "Backend (Go / Gin)",
+          "text": "Go + Gin как основной стек. Middleware-цепочки, correlation IDs. JWT-аутентификация с refresh-токенами и ротацией. WebSocket: чаты, групповые сообщения. Redis-кеширование через Decorator Pattern. Двусторонняя синхронизация с 1C ERP."
+        },
+        "frontend": {
+          "title": "Frontend (React / TypeScript)",
+          "text": "Внутренние панели на Next.js с Server Components и App Router. Мультиязычность ru/en/fr/ar с поддержкой RTL. Переиспользуемые UI-компоненты. PWA с offline-режимом."
+        },
+        "ai": {
+          "title": "AI-инструменты",
+          "text": "Claude Code (CLI) для планирования архитектуры и AI-driven TDD: тесты до реализации, параллельная верификация через subagent-задачи. MCP-серверы: Serena, Context7, Playwright MCP. LSP-плагин gopls."
+        },
+        "devops": {
+          "title": "DevOps и инфраструктура",
+          "text": "Docker + Docker Compose, multi-stage builds. Observability с нуля: Prometheus, Grafana, Loki, OpenTelemetry. Telegram-алерты на CPU/RAM/Disk/API errors. CI/CD в GitHub Actions. Автобэкапы с шифрованием."
+        },
+        "testing": {
+          "title": "Тестирование",
+          "text": "testify unit-тесты для Go, k6 load-тесты. E2E на Playwright. Mocking для WebSocket и 1C API. Тесты в CI/CD: PR не мерджится без прохождения тестовой матрицы."
+        },
+        "integrations": {
+          "title": "Интеграции",
+          "text": "Двусторонняя синхронизация с 1C ERP: маппинг доменных сущностей, обработка конфликтов, логирование расхождений. Telegram Bot API. Composio Gmail API. S3/MinIO для хранения файлов."
+        }
+      }
+    },
+    "anvirtekhno": {
+      "company": "Анвиртехно",
+      "role": "Fullstack-разработчик",
+      "period": "Ноябрь 2024 — настоящее время",
+      "highlights": [
+        "**Год+ стабильной удалённой работы** в команде: регулярный delivery, **code review с первого-второго раза**",
+        "Автогенерация TypeScript-клиентов из OpenAPI: **устранён целый класс ошибок** рассинхронизации frontend/backend",
+        "Реализовал PWA с offline-режимом и push-уведомлениями — **приложение работает без интернета и устанавливается как нативное**",
+        "Подключил LLM-провайдеры (OpenAI, Ollama) в production с **fallback-стратегией и мониторингом токенов**",
+        "Построил систему автобэкапов PostgreSQL + MinIO с **шифрованием и offsite-синхронизацией**",
+        "Claude Code (CLI) как основной AI-инструмент: MCP-серверы (Serena, Context7, Playwright, Figma), **AI-driven TDD**, кастомные скилы для debugging и code review"
+      ],
+      "duties_label": "Обязанности",
+      "duties": {
+        "methodology": {
+          "title": "Методологии разработки",
+          "text": "API-first подход: OpenAPI спецификация → автогенерация TypeScript-клиентов. TDD для бизнес-логики. RDD для планирования фич перед реализацией. TypeScript-типы из схем БД."
+        },
+        "architecture": {
+          "title": "Архитектура и проектирование",
+          "text": "Clean Architecture на базе NestJS-модулей. REST API с автодокументацией из декораторов. Event-driven подход для слабосвязанных компонентов. Структура, готовая к выносу в микросервисы."
+        },
+        "backend": {
+          "title": "Backend (NestJS / TypeScript)",
+          "text": "NestJS как основной стек. JWT-аутентификация с refresh-токенами. Background jobs и scheduled tasks. LLM-провайдеры (OpenAI, Ollama) с fallback-стратегией и мониторингом токенов. Telegram Bot интеграция."
+        },
+        "frontend": {
+          "title": "Frontend (React / TypeScript)",
+          "text": "Next.js PWA с offline-режимом и push-уведомлениями. Zustand + SWR для state management. React Hook Form + Zod для валидации. Компонентная библиотека в Storybook. i18n и темизация."
+        },
+        "ai": {
+          "title": "AI-инструменты",
+          "text": "Claude Code (CLI) для code review, debugging и рефакторинга. MCP-серверы: Context7 (документация), Playwright MCP (E2E), Figma MCP (дизайн). TypeScript language server для code intelligence. Кастомные скилы."
+        },
+        "devops": {
+          "title": "DevOps и инфраструктура",
+          "text": "Docker + Docker Compose, multi-stage builds. Автобэкапы PostgreSQL + MinIO с шифрованием и offsite-синхронизацией. CI/CD в GitHub Actions, Dependabot. Observability: Prometheus, Grafana, Loki."
+        },
+        "testing": {
+          "title": "Тестирование",
+          "text": "Jest unit-тесты для TypeScript/Node.js. E2E на Playwright. Mocking для LLM-провайдеров и внешних сервисов. Тесты интегрированы в CI/CD: PR не мерджится без зелёной матрицы."
+        },
+        "integrations": {
+          "title": "Интеграции",
+          "text": "LLM-провайдеры (OpenAI, Ollama) с fallback и мониторингом. Telegram Bot API. S3/MinIO для хранения и бэкапов. Composio Gmail API для уведомлений."
+        }
+      }
+    }
+  },
+  "projects": {
+    "title": "Проекты",
+    "academic_secretary": {
+      "name": "ИС Академического Секретаря/Методиста",
+      "description": "Модульный монолит на Go: DDD + Clean Architecture, каждый домен инкапсулирован. In-memory EventBus с абстракцией под Kafka. CQRS + Event Sourcing + Repository + Unit of Work. 22 SQL-миграции PostgreSQL 17.",
+      "commits": "426 коммитов",
+      "performance": "30x ускорение Redis",
+      "features": {
+        "architecture": "Модульный монолит на Go: DDD + Clean Architecture, CQRS, Event Sourcing, Repository + Unit of Work. In-memory EventBus с абстракцией под Kafka. gRPC-интерфейсы. 22 SQL-миграции PostgreSQL 17 с версионированием и rollback",
+        "backend": "Gin: middleware-цепочки, correlation IDs. OAuth 2.0 + JWT (полные security claims, timing-attack prevention, bcrypt cost 14, rate limiting 5 req/15 min, 6 security headers). WebSocket чаты. Предиктивная аналитика. Composio Gmail API + Telegram Bot. 1C ERP-интеграция. Мультиязычность ru/en/fr/ar с RTL",
+        "devops": "Prometheus + Grafana (latency/error rate/throughput). Loki + Promtail (JSON логи). Grafana Tempo + OpenTelemetry (distributed tracing). Telegram-алерты: CPU/RAM/Disk/API errors/backup. Docker + Docker Swarm. GitHub Actions CI/CD. Nginx + CloudFlare. Автобэкапы PostgreSQL и MinIO с шифрованием",
+        "testing": "testify unit-тесты (Go), k6 load-тесты, Playwright E2E. AI-driven TDD: тесты до реализации, параллельная верификация. Документация: архитектура, API reference, deployment, security. GitHub Projects: 40+ Issues. .taskmaster — AI-assisted таск-менеджмент"
+      },
+      "redis": {
+        "title": "Redis — производительность",
+        "decorator": "Decorator Pattern: ноль изменений в бизнес-логике. Инвалидация по событиям домена — консистентность гарантирована. Redis как хранилище сессий и брокер фоновых задач.",
+        "headers": ["Операция", "Без кеша", "С Redis", "Прирост"],
+        "rows": [
+          ["GetUserByID", "15–20 ms", "0.5–1 ms", "30x быстрее"],
+          ["GetUserByEmail", "15–20 ms", "0.5–1 ms", "30x быстрее"],
+          ["Login (полный flow)", "350–400 ms", "200–250 ms", "40% быстрее"],
+          ["Пропускная способность", "~250 req/s", "~1000 req/s", "4x больше"]
+        ]
+      }
+    }
+  },
+  "education": {
+    "title": "Образование",
+    "university": {
+      "name": "Уральский государственный горный университет",
+      "faculty": "Инженерно-экономический факультет",
+      "period": "Сентябрь 2020 — настоящее время",
+      "location": "Екатеринбург",
+      "specialization": "Специализация: веб-разработка, Node.js, React",
+      "projects": "Учебные проекты: «Дневник спортсмена», система агронавигации, платформа для иностранных студентов",
+      "extra": "Хакатоны, UML, написание технических заданий"
+    },
+    "retraining": {
+      "name": "ФГБОУ ВО «Уральский государственный горный университет»",
+      "program": "Computer Vision Engineer — профессиональная переподготовка",
+      "period": "Сентябрь 2022 — Июнь 2023",
+      "location": "Екатеринбург",
+      "description": "Машинное зрение и AI. Диплом о профессиональной переподготовке №662415680177, квалификация «Специалист по большим данным» (компьютерное зрение, распознавание образов), выдан 16 июля 2024 г."
+    }
+  },
+  "certificates": {
+    "title": "Сертификаты",
+    "subtitle": "7 официальных сертификатов Anthropic (2026) — подтверждают компетенции в работе с Claude, Claude Code CLI, Claude API, MCP-серверами и AI-инструментами в разработке.",
+    "items": {
+      "claude101": {
+        "name": "Claude 101",
+        "desc": "Основы работы с Claude: промпт-инженерия, контекст, лучшие практики",
+        "date": "2026"
+      },
+      "claudeCode": {
+        "name": "Claude Code в действии",
+        "desc": "Claude Code CLI: агентная разработка, MCP-серверы, memory, кастомные скилы",
+        "date": "Февраль 2026"
+      },
+      "claudeApi": {
+        "name": "Разработка с Claude API",
+        "desc": "Claude API: вызов инструментов, стриминг, структурированные ответы, Anthropic SDK",
+        "date": "Март 2026"
+      },
+      "mcp": {
+        "name": "Введение в MCP",
+        "desc": "Model Context Protocol: архитектура, создание серверов, интеграции с инструментами",
+        "date": "Март 2026"
+      },
+      "aiFramework": {
+        "name": "AI Fluency: основы и фреймворк",
+        "desc": "Фреймворк AI Fluency: принципы, ограничения и возможности LLM",
+        "date": "2026"
+      },
+      "aiStudents": {
+        "name": "AI Fluency для студентов",
+        "desc": "Применение AI в обучении и исследованиях",
+        "date": "2026"
+      },
+      "aiEducators": {
+        "name": "AI Fluency для преподавателей",
+        "desc": "AI-инструменты в образовательном процессе",
+        "date": "2026"
+      }
+    }
+  },
+  "contact": {
+    "title": "Давайте работать вместе",
+    "subtitle": "Открыт для фриланс-проектов и удалённой работы на полную ставку.",
+    "email": "Email",
+    "telegram": "Telegram",
+    "github": "GitHub",
+    "habr": "Habr Career"
+  },
+  "footer": {
+    "copyright": "Даниил Вдовин. Создано с Next.js, GSAP и большим количеством кофе."
+  }
+}

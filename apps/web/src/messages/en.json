@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "title": "Daniil Vdovin — Fullstack Developer",
+    "description": "Middle Fullstack/Backend developer specializing in Go, Node.js, and AI-powered solutions. Based in Ekaterinburg, Russia."
+  },
+  "nav": {
+    "about": "About",
+    "stack": "Stack",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Daniil Vdovin",
+    "role": "Fullstack Developer",
+    "tagline": "I build reliable backends and modern interfaces with Go, Node.js — powered by AI tools.",
+    "cta_contact": "Get in touch",
+    "cta_resume": "Download CV"
+  },
+  "about": {
+    "title": "About me",
+    "bio": "Fullstack developer focused on Backend (Go & Node.js/NestJS). 1.5+ years of commercial experience with two parallel production projects serving real users. I write code that others can understand: modular architecture, clean abstractions, test coverage. I can work in a team, read others' code, and ask questions before writing — not after.\n\nI use AI as a daily development tool — Claude Code CLI with custom MCP servers — it's a workflow, not an experiment. I want to grow towards complex backend systems: distributed architectures, performance, reliability.",
+    "facts": {
+      "location": "Ekaterinburg, Russia",
+      "experience": "1.5+ years commercial",
+      "russian": "Russian — Native",
+      "english": "English — B1–B2, technical, actively improving",
+      "education": "UGGU, Big Data Specialist (Computer Vision)"
+    }
+  },
+  "stack": {
+    "title": "Tech Stack",
+    "categories": {
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "devops": "DevOps & Infra",
+      "testing": "Testing",
+      "ai": "AI & Tools"
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "academic_secretary": {
+      "company": "Multimedia Video Systems",
+      "role": "Fullstack Developer",
+      "period": "October 2025 — Present",
+      "highlights": [
+        "Shipped **multiple independent production modules from scratch** — each with tests, docs and CI pipeline",
+        "Set up full observability stack (Prometheus + Grafana + Loki + OpenTelemetry): **incident detection time — minutes**",
+        "Implemented Redis caching via Decorator Pattern: **30x read speedup** with zero changes to business logic",
+        "Built 1C ERP and Telegram Bot integrations: **bidirectional data sync with zero data loss**",
+        "Claude Code (CLI) as primary AI tool: MCP servers (Serena, Context7, Playwright, Figma), **AI-driven TDD**, custom skills for debugging and code review"
+      ],
+      "duties_label": "Responsibilities",
+      "duties": {
+        "methodology": {
+          "title": "Development Methodologies",
+          "text": "TDD + DDD for domain logic design: tests first, then domain objects and services. CQRS and Event Sourcing for read/write separation. RDD for feature planning. Swagger/OpenAPI documentation from Go annotations."
+        },
+        "architecture": {
+          "title": "Architecture & Design",
+          "text": "Modular monolith on Go: each domain encapsulated, clear boundaries. In-memory EventBus with Kafka abstraction. CQRS + Event Sourcing + Repository + Unit of Work. REST API with unified error handling and pagination."
+        },
+        "backend": {
+          "title": "Backend (Go / Gin)",
+          "text": "Go + Gin as primary stack. Middleware chains, correlation IDs. JWT auth with refresh tokens and rotation. WebSocket: chats, group messages. Redis caching via Decorator Pattern. Bidirectional sync with 1C ERP."
+        },
+        "frontend": {
+          "title": "Frontend (React / TypeScript)",
+          "text": "Internal panels on Next.js with Server Components and App Router. Multilingual ru/en/fr/ar with RTL support. Reusable UI components. PWA with offline mode."
+        },
+        "ai": {
+          "title": "AI Tools",
+          "text": "Claude Code (CLI) for architecture planning and AI-driven TDD: tests before implementation, parallel verification via subagent tasks. MCP servers: Serena, Context7, Playwright MCP. LSP plugin gopls."
+        },
+        "devops": {
+          "title": "DevOps & Infrastructure",
+          "text": "Docker + Docker Compose, multi-stage builds. Observability from scratch: Prometheus, Grafana, Loki, OpenTelemetry. Telegram alerts on CPU/RAM/Disk/API errors. CI/CD in GitHub Actions. Encrypted auto-backups."
+        },
+        "testing": {
+          "title": "Testing",
+          "text": "testify unit tests for Go, k6 load tests. E2E with Playwright. Mocking for WebSocket and 1C API. Tests in CI/CD: PRs don't merge without passing the full test matrix."
+        },
+        "integrations": {
+          "title": "Integrations",
+          "text": "Bidirectional sync with 1C ERP: domain entity mapping, conflict handling, discrepancy logging. Telegram Bot API. Composio Gmail API. S3/MinIO for file storage."
+        }
+      }
+    },
+    "anvirtekhno": {
+      "company": "Anvirtekhno",
+      "role": "Fullstack Developer",
+      "period": "November 2024 — Present",
+      "highlights": [
+        "**1+ year of stable remote work** in a team: regular delivery, **code review approved on first-second attempt**",
+        "Auto-generated TypeScript clients from OpenAPI: **eliminated entire class of errors** in frontend/backend sync",
+        "Built PWA with offline mode and push notifications — **app works without internet and installs as native**",
+        "Connected LLM providers (OpenAI, Ollama) to production with **fallback strategy and token monitoring**",
+        "Built PostgreSQL + MinIO auto-backup system with **encryption and offsite sync**",
+        "Claude Code (CLI) as primary AI tool: MCP servers (Serena, Context7, Playwright, Figma), **AI-driven TDD**, custom skills for debugging and code review"
+      ],
+      "duties_label": "Responsibilities",
+      "duties": {
+        "methodology": {
+          "title": "Development Methodologies",
+          "text": "API-first approach: OpenAPI spec → auto-generated TypeScript clients. TDD for business logic. RDD for feature planning before implementation. TypeScript types from DB schemas."
+        },
+        "architecture": {
+          "title": "Architecture & Design",
+          "text": "Clean Architecture on NestJS modules. REST API with auto-documentation from decorators. Event-driven approach for loosely coupled components. Structure ready for microservice extraction."
+        },
+        "backend": {
+          "title": "Backend (NestJS / TypeScript)",
+          "text": "NestJS as primary stack. JWT auth with refresh tokens. Background jobs and scheduled tasks. LLM providers (OpenAI, Ollama) with fallback strategy and token monitoring. Telegram Bot integration."
+        },
+        "frontend": {
+          "title": "Frontend (React / TypeScript)",
+          "text": "Next.js PWA with offline mode and push notifications. Zustand + SWR for state management. React Hook Form + Zod for validation. Component library in Storybook. i18n and theming."
+        },
+        "ai": {
+          "title": "AI Tools",
+          "text": "Claude Code (CLI) for code review, debugging and refactoring. MCP servers: Context7 (docs), Playwright MCP (E2E), Figma MCP (design). TypeScript language server for code intelligence. Custom skills."
+        },
+        "devops": {
+          "title": "DevOps & Infrastructure",
+          "text": "Docker + Docker Compose, multi-stage builds. Auto-backups PostgreSQL + MinIO with encryption and offsite sync. CI/CD in GitHub Actions, Dependabot. Observability: Prometheus, Grafana, Loki."
+        },
+        "testing": {
+          "title": "Testing",
+          "text": "Jest unit tests for TypeScript/Node.js. E2E with Playwright. Mocking for LLM providers and external services. Tests integrated in CI/CD: PRs don't merge without green matrix."
+        },
+        "integrations": {
+          "title": "Integrations",
+          "text": "LLM providers (OpenAI, Ollama) with fallback and monitoring. Telegram Bot API. S3/MinIO for storage and backups. Composio Gmail API for notifications."
+        }
+      }
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "academic_secretary": {
+      "name": "Academic Secretary IS",
+      "description": "Modular monolith on Go: DDD + Clean Architecture, encapsulated domains. In-memory EventBus with Kafka abstraction. CQRS + Event Sourcing + Repository + Unit of Work. 22 PostgreSQL 17 SQL migrations.",
+      "commits": "426 commits",
+      "performance": "30x Redis speedup",
+      "features": {
+        "architecture": "Modular monolith on Go: DDD + Clean Architecture, CQRS, Event Sourcing, Repository + Unit of Work. In-memory EventBus with Kafka abstraction. gRPC interfaces. 22 PostgreSQL 17 SQL migrations with versioning and rollback",
+        "backend": "Gin: middleware chains, correlation IDs. OAuth 2.0 + JWT (full security claims, timing-attack prevention, bcrypt cost 14, rate limiting 5 req/15 min, 6 security headers). WebSocket chats. Predictive analytics. Composio Gmail API + Telegram Bot. 1C ERP integration. i18n ru/en/fr/ar with RTL",
+        "devops": "Prometheus + Grafana (latency/error rate/throughput). Loki + Promtail (JSON logs). Grafana Tempo + OpenTelemetry (distributed tracing). Telegram alerts: CPU/RAM/Disk/API errors/backup. Docker + Docker Swarm. GitHub Actions CI/CD. Nginx + CloudFlare. Auto-backups PostgreSQL & MinIO with encryption",
+        "testing": "testify unit tests (Go), k6 load tests, Playwright E2E. AI-driven TDD: tests before implementation, parallel verification. Documentation: architecture, API reference, deployment, security. GitHub Projects: 40+ Issues. .taskmaster — AI-assisted task management"
+      },
+      "redis": {
+        "title": "Redis — Performance",
+        "decorator": "Decorator Pattern: zero changes to business logic. Invalidation by domain events — consistency guaranteed. Redis as session store and background job broker.",
+        "headers": ["Operation", "No cache", "With Redis", "Improvement"],
+        "rows": [
+          ["GetUserByID", "15–20 ms", "0.5–1 ms", "30x faster"],
+          ["GetUserByEmail", "15–20 ms", "0.5–1 ms", "30x faster"],
+          ["Login (full flow)", "350–400 ms", "200–250 ms", "40% faster"],
+          ["Throughput", "~250 req/s", "~1000 req/s", "4x more"]
+        ]
+      }
+    }
+  },
+  "education": {
+    "title": "Education",
+    "university": {
+      "name": "Ural State Mining University",
+      "faculty": "Faculty of Engineering and Economics",
+      "period": "September 2020 — Present",
+      "location": "Ekaterinburg",
+      "specialization": "Specialization: web development, Node.js, React",
+      "projects": "Student projects: \"Athlete's Diary\", agronavigation system, platform for international students learning programming",
+      "extra": "Hackathons, UML, technical specifications writing"
+    },
+    "retraining": {
+      "name": "Ural State Mining University",
+      "program": "Computer Vision Engineer — professional retraining",
+      "period": "September 2022 — June 2023",
+      "location": "Ekaterinburg",
+      "description": "Machine vision and AI. Professional retraining diploma No. 662415680177, qualification \"Big Data Specialist\" (computer vision, pattern recognition), issued July 16, 2024."
+    }
+  },
+  "certificates": {
+    "title": "Certificates",
+    "subtitle": "7 official Anthropic certificates (2026) — confirming expertise in Claude, Claude Code CLI, Claude API, MCP servers and AI-powered development workflows.",
+    "items": {
+      "claude101": {
+        "name": "Claude 101",
+        "desc": "Claude fundamentals: prompt engineering, context management, best practices",
+        "date": "2026"
+      },
+      "claudeCode": {
+        "name": "Claude Code in Action",
+        "desc": "Claude Code CLI: agentic development, MCP servers, memory, custom skills",
+        "date": "February 2026"
+      },
+      "claudeApi": {
+        "name": "Building with the Claude API",
+        "desc": "Claude API: tool use, streaming, structured outputs, Anthropic SDK",
+        "date": "March 2026"
+      },
+      "mcp": {
+        "name": "Introduction to MCP",
+        "desc": "Model Context Protocol: architecture, building servers, tool integrations",
+        "date": "March 2026"
+      },
+      "aiFramework": {
+        "name": "AI Fluency: Framework & Foundations",
+        "desc": "AI Fluency framework: principles, limitations and capabilities of LLMs",
+        "date": "2026"
+      },
+      "aiStudents": {
+        "name": "AI Fluency for Students",
+        "desc": "Applying AI in learning and research",
+        "date": "2026"
+      },
+      "aiEducators": {
+        "name": "AI Fluency for Educators",
+        "desc": "AI tools in the educational process",
+        "date": "2026"
+      }
+    }
+  },
+  "contact": {
+    "title": "Let's work together",
+    "subtitle": "Open to freelance projects and full-time remote positions.",
+    "email": "Email",
+    "telegram": "Telegram",
+    "github": "GitHub",
+    "habr": "Habr Career"
+  },
+  "footer": {
+    "copyright": "Daniil Vdovin. Built with Next.js, GSAP & a lot of coffee."
+  }
+}
