@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: oklch(0.13 0.01 260);
+  --color-bg-secondary: oklch(0.17 0.01 260);
+  --color-bg-card: oklch(0.20 0.015 260);
+  --color-bg-card-hover: oklch(0.24 0.02 260);
+
+  --color-text-primary: oklch(0.95 0.01 260);
+  --color-text-secondary: oklch(0.70 0.02 260);
+  --color-text-muted: oklch(0.50 0.02 260);
+
+  --color-accent: oklch(0.72 0.18 250);
+  --color-accent-hover: oklch(0.78 0.20 250);
+  --color-accent-secondary: oklch(0.70 0.16 330);
+
+  --color-border: oklch(0.25 0.01 260);
+  --color-border-hover: oklch(0.35 0.02 260);
+
+  --color-success: oklch(0.72 0.18 155);
+  --color-info: oklch(0.72 0.15 230);
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --spacing-18: 4.5rem;
+  --spacing-88: 22rem;
+  --spacing-128: 32rem;
+
+  --radius-bento: 1.25rem;
+  --radius-card: 1rem;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --breakpoint-xs: 475px;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    scroll-behavior: auto;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: oklch(0.72 0.18 250 / 0.3);
+  }
+}
+
+/* Scroll reveal animations — CSS-based, no GSAP dependency */
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+
+  /* Language bar grow animation */
+  .lang-bar-animate {
+    transform-origin: left;
+    animation: lang-bar-grow 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}
+
+@keyframes lang-bar-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
