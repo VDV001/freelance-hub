@@ -8,7 +8,7 @@ COPY package.json package-lock.json ./
 COPY apps/bot/package.json ./apps/bot/
 COPY packages/shared/package.json ./packages/shared/
 
-RUN npm ci --workspace=@freelance-hub/bot
+RUN npm ci --workspace=@freelance-hub/bot --workspace=@freelance-hub/shared
 
 # ---
 
@@ -17,8 +17,7 @@ FROM node:22-slim AS build
 WORKDIR /app
 
 COPY --from=deps /app/node_modules ./node_modules
-COPY --from=deps /app/apps/bot/node_modules ./apps/bot/node_modules
-COPY --from=deps /app/packages/shared/node_modules ./packages/shared/node_modules
+COPY --from=deps /app/package.json ./
 
 COPY tsconfig.base.json ./
 COPY packages/shared/ ./packages/shared/
@@ -38,8 +37,6 @@ RUN groupadd -r bot && useradd -r -g bot -s /bin/false bot
 WORKDIR /app
 
 COPY --from=deps /app/node_modules ./node_modules
-COPY --from=deps /app/packages/shared/node_modules ./packages/shared/node_modules
-COPY --from=deps /app/apps/bot/node_modules ./apps/bot/node_modules
 COPY --from=build /app/packages/shared/dist ./packages/shared/dist
 COPY --from=build /app/apps/bot/dist ./apps/bot/dist
 COPY packages/shared/package.json ./packages/shared/
