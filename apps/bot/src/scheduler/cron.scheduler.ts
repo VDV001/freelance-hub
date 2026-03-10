@@ -119,16 +119,23 @@ async function runHabrParsers(): Promise<void> {
 
     if (isPaused() || newArticles.length === 0) continue;
 
-    for (const article of newArticles) {
+    // Limit to 5 newest articles per hub per run to avoid Telegram rate limits
+    const toSend = newArticles.slice(0, 5);
+    for (const article of toSend) {
       const message = formatArticle(article);
       try {
         await bot.api.sendMessage(channelId, message, {
           parse_mode: 'HTML',
           link_preview_options: { is_disabled: true },
         });
-        await new Promise((r) => setTimeout(r, 500));
+        await new Promise((r) => setTimeout(r, 3000));
       } catch (err) {
-        console.error(`[habr] Failed to send article:`, (err as Error).message);
+        const errMsg = (err as Error).message;
+        if (errMsg.includes('429')) {
+          console.log(`[habr] Rate limited, pausing hub ${hub}`);
+          break;
+        }
+        console.error(`[habr] Failed to send article:`, errMsg);
       }
     }
   }
