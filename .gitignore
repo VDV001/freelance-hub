@@ -6,7 +6,8 @@ dist/
 .env.local
 .DS_Store
 *.log
-*.pdf
 *.docx
+# PDFs in root ignored, but apps/web/public/cv.pdf is tracked
+/*.pdf
 .playwright-mcp/
 .next/
