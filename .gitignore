@@ -11,3 +11,7 @@ dist/
 /*.pdf
 .playwright-mcp/
 .next/
+.vps-credentials
+*.db-shm
+*.db-wal
+tsconfig.tsbuildinfo
