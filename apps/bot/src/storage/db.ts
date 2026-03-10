@@ -32,4 +32,19 @@ db.exec(`
   CREATE INDEX IF NOT EXISTS idx_jobs_platform ON jobs(platform);
   CREATE INDEX IF NOT EXISTS idx_jobs_notified ON jobs(notified);
   CREATE INDEX IF NOT EXISTS idx_jobs_fetched_at ON jobs(fetched_at);
+
+  CREATE TABLE IF NOT EXISTS articles (
+    id TEXT PRIMARY KEY,
+    title TEXT NOT NULL,
+    description TEXT NOT NULL,
+    url TEXT NOT NULL UNIQUE,
+    hub TEXT NOT NULL,
+    author TEXT NOT NULL DEFAULT '',
+    tags TEXT NOT NULL DEFAULT '[]',
+    created_at TEXT NOT NULL,
+    fetched_at TEXT NOT NULL DEFAULT (datetime('now'))
+  );
+
+  CREATE INDEX IF NOT EXISTS idx_articles_hub ON articles(hub);
+  CREATE INDEX IF NOT EXISTS idx_articles_fetched_at ON articles(fetched_at);
 `);
