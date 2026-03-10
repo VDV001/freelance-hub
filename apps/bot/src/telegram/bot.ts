@@ -6,6 +6,7 @@ import { registerPauseCommand } from './commands/pause.js';
 import { registerStatsCommand } from './commands/stats.js';
 import { registerPlatformsCommand } from './commands/platforms.js';
 import { registerHelpCommand } from './commands/help.js';
+import { registerHabrCommand } from './commands/habr.js';
 
 export const bot = new Bot(env.TELEGRAM_BOT_TOKEN);
 
@@ -17,6 +18,7 @@ bot.api.setMyCommands([
   { command: 'stats', description: 'Статистика заказов' },
   { command: 'pause', description: 'Приостановить уведомления' },
   { command: 'resume', description: 'Возобновить уведомления' },
+  { command: 'habr', description: 'Настройка Хабр-статей' },
 ]);
 
 // Owner-only guard (must be before command handlers)
@@ -34,3 +36,4 @@ registerFilterCommand(bot);
 registerPauseCommand(bot);
 registerStatsCommand(bot);
 registerPlatformsCommand(bot);
+registerHabrCommand(bot);
