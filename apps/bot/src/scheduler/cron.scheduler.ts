@@ -15,6 +15,10 @@ import { RemoteOKParser } from '../parsers/remoteok.parser.js';
 import { HHParser } from '../parsers/hh.parser.js';
 import { FreelancehuntParser } from '../parsers/freelancehunt.parser.js';
 import { JoobleParser } from '../parsers/jooble.parser.js';
+import { HabrParser } from '../parsers/habr.parser.js';
+import { getHabrConfig } from '../telegram/commands/habr.js';
+import { articlesRepo } from '../storage/articles.repository.js';
+import { formatArticle } from '../telegram/formatters/article.formatter.js';
 
 function createParser(config: ParserConfig): BaseParser | null {
   switch (config.platform) {
@@ -77,6 +81,59 @@ async function runParser(config: ParserConfig): Promise<void> {
   }
 }
 
+async function runHabrParsers(): Promise<void> {
+  const config = getHabrConfig();
+  if (config.hubs.length === 0) return;
+
+  const channelId = env.TELEGRAM_HABR_CHANNEL_ID;
+  if (!channelId) {
+    console.log('[habr] TELEGRAM_HABR_CHANNEL_ID not set, skipping');
+    return;
+  }
+
+  for (const hub of config.hubs) {
+    const parser = new HabrParser(hub);
+    console.log(`[habr] Parsing hub: ${hub}...`);
+
+    const articles = await parser.parse();
+    console.log(`[habr] ${hub}: fetched ${articles.length} articles`);
+
+    const filtered = articles.filter((article) => {
+      const text = `${article.title} ${article.description} ${article.tags.join(' ')}`.toLowerCase();
+
+      for (const kw of config.excludeKeywords) {
+        if (text.includes(kw.toLowerCase())) return false;
+      }
+
+      if (config.includeKeywords.length === 0) return true;
+
+      for (const kw of config.includeKeywords) {
+        if (text.includes(kw.toLowerCase())) return true;
+      }
+      return false;
+    });
+    console.log(`[habr] ${hub}: ${filtered.length} passed filter`);
+
+    const newArticles = articlesRepo.saveMany(filtered);
+    console.log(`[habr] ${hub}: ${newArticles.length} new articles`);
+
+    if (isPaused() || newArticles.length === 0) continue;
+
+    for (const article of newArticles) {
+      const message = formatArticle(article);
+      try {
+        await bot.api.sendMessage(channelId, message, {
+          parse_mode: 'HTML',
+          link_preview_options: { is_disabled: true },
+        });
+        await new Promise((r) => setTimeout(r, 500));
+      } catch (err) {
+        console.error(`[habr] Failed to send article:`, (err as Error).message);
+      }
+    }
+  }
+}
+
 export function startScheduler(): void {
   // Group configs by interval
   const rssConfigs = PLATFORM_CONFIGS.filter(
@@ -100,10 +157,16 @@ export function startScheduler(): void {
     }
   });
 
-  // Cleanup old jobs — daily at 3 AM
+  // Habr articles — every 10 minutes
+  cron.schedule('*/10 * * * *', async () => {
+    await runHabrParsers();
+  });
+
+  // Cleanup old jobs and articles — daily at 3 AM
   cron.schedule('0 3 * * *', () => {
-    const deleted = jobsRepo.cleanOld();
-    console.log(`[scheduler] Cleaned ${deleted} old jobs`);
+    const deletedJobs = jobsRepo.cleanOld();
+    const deletedArticles = articlesRepo.cleanOld();
+    console.log(`[scheduler] Cleaned ${deletedJobs} old jobs, ${deletedArticles} old articles`);
   });
 
   // Initial run on startup
@@ -112,8 +175,9 @@ export function startScheduler(): void {
     for (const config of [...rssConfigs, ...apiConfigs]) {
       await runParser(config);
     }
+    await runHabrParsers();
     console.log('[scheduler] Initial parse complete');
   })();
 
-  console.log('[scheduler] Cron jobs started (RSS: 5min, API: 15min)');
+  console.log('[scheduler] Cron jobs started (RSS: 5min, API: 15min, Habr: 10min)');
 }
