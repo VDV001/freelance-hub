@@ -1,0 +1,25 @@
+{
+  "name": "freelance-hub",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:bot": "turbo run dev --filter=@freelance-hub/bot",
+    "dev:web": "turbo run dev --filter=@freelance-hub/web",
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean"
+  },
+  "devDependencies": {
+    "turbo": "^2.4.0",
+    "typescript": "^5.7.0"
+  },
+  "packageManager": "npm@11.5.1",
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
