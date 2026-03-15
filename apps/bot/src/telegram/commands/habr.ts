@@ -109,9 +109,11 @@ ${hubList}
         await ctx.reply(
           `<b>Популярные хабы Хабра:</b>
 
-go, typescript, nodejs, reactjs, python,
-devops, docker, kubernetes, postgresql,
-linux, git, algorithms, machine_learning,
+go, typescript, nodejs, nestjs, reactjs, python,
+devops, kubernetes, postgresql, linux, git,
+artificial_intelligence, machine_learning,
+natural_language_processing, image_processing,
+bigdata, cloud_services, algorithms,
 security, api, testing, career, management`,
           { parse_mode: 'HTML' },
         );
