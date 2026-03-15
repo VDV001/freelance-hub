@@ -6,7 +6,6 @@ export enum Platform {
   FREELANCEHUNT = 'freelancehunt',
   HH_RU = 'hh_ru',
   FREELANCER_COM = 'freelancer_com',
-  JOOBLE = 'jooble',
   WE_WORK_REMOTELY = 'wwr',
   GURU = 'guru',
 }

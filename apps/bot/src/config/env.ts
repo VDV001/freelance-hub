@@ -12,7 +12,6 @@ const envSchema = z.object({
   TELEGRAM_CHAT_ID: z.string().min(1),
 
   FREELANCEHUNT_TOKEN: z.string().optional(),
-  JOOBLE_API_KEY: z.string().optional(),
   HH_ACCESS_TOKEN: z.string().optional(),
 
   TELEGRAM_HABR_CHANNEL_ID: z.string().optional(),

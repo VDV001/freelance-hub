@@ -14,7 +14,7 @@ export function registerStartCommand(bot: Bot<Context>) {
 
 Мониторю фриланс-биржи и присылаю заказы под твой профиль.
 
-<b>Платформы:</b> FL.ru, WWR, RemoteOK, hh.ru, Freelancehunt, Jooble
+<b>Платформы:</b> FL.ru, WWR, RemoteOK, hh.ru, Freelancehunt
 <b>Интервал:</b> RSS каждые 5 мин, API каждые 15 мин
 
 Бот уже работает! Используй кнопки ниже или /help для списка команд.`,

@@ -8,7 +8,6 @@ const PLATFORM_NAMES: Record<string, string> = {
   freelancehunt: 'Freelancehunt',
   hh_ru: 'hh.ru',
   freelancer_com: 'Freelancer.com',
-  jooble: 'Jooble',
   wwr: 'We Work Remotely',
   guru: 'Guru',
 };

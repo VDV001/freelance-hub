@@ -14,7 +14,6 @@ import { RssJobParser } from '../parsers/rss.parser.js';
 import { RemoteOKParser } from '../parsers/remoteok.parser.js';
 import { HHParser } from '../parsers/hh.parser.js';
 import { FreelancehuntParser } from '../parsers/freelancehunt.parser.js';
-import { JoobleParser } from '../parsers/jooble.parser.js';
 import { HabrParser } from '../parsers/habr.parser.js';
 import { getHabrConfig } from '../telegram/commands/habr.js';
 import { articlesRepo } from '../storage/articles.repository.js';
@@ -34,8 +33,6 @@ function createParser(config: ParserConfig): BaseParser | null {
       return new HHParser(config.token);
     case Platform.FREELANCEHUNT:
       return config.token ? new FreelancehuntParser(config.token) : null;
-    case Platform.JOOBLE:
-      return config.token ? new JoobleParser(config.token) : null;
     default:
       return null;
   }

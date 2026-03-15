@@ -38,11 +38,4 @@ export const PLATFORM_CONFIGS: ParserConfig[] = [
     url: 'https://api.hh.ru/vacancies',
     token: env.HH_ACCESS_TOKEN,
   },
-  {
-    platform: Platform.JOOBLE,
-    enabled: !!env.JOOBLE_API_KEY,
-    interval: env.POLL_INTERVAL_API,
-    url: 'https://jooble.org/api/',
-    token: env.JOOBLE_API_KEY,
-  },
 ];

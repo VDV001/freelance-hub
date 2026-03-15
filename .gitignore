@@ -15,3 +15,5 @@ dist/
 *.db-shm
 *.db-wal
 tsconfig.tsbuildinfo
+.mcp.json
+.serena/
