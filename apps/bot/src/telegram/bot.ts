@@ -8,7 +8,11 @@ import { registerPlatformsCommand } from './commands/platforms.js';
 import { registerHelpCommand } from './commands/help.js';
 import { registerHabrCommand } from './commands/habr.js';
 
-export const bot = new Bot(env.TELEGRAM_BOT_TOKEN);
+export const bot = new Bot(env.TELEGRAM_BOT_TOKEN, {
+  client: {
+    apiRoot: env.TELEGRAM_API_ROOT ?? 'https://api.telegram.org',
+  },
+});
 
 // Set bot commands menu (visible in Telegram UI)
 bot.api.setMyCommands([

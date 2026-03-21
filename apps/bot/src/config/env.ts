@@ -14,6 +14,7 @@ const envSchema = z.object({
   FREELANCEHUNT_TOKEN: z.string().optional(),
   HH_ACCESS_TOKEN: z.string().optional(),
 
+  TELEGRAM_API_ROOT: z.string().optional(),
   TELEGRAM_HABR_CHANNEL_ID: z.string().optional(),
   POLL_INTERVAL_RSS: z.coerce.number().default(300),
   POLL_INTERVAL_API: z.coerce.number().default(900),
