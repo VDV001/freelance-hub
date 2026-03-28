@@ -1,10 +1,13 @@
 import { writeFileSync, mkdirSync, existsSync, readFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import type { Article } from '@freelance-hub/shared';
 
 type InboxArticle = Omit<Article, 'id' | 'fetchedAt'>;
 
-const DATA_DIR = join(process.cwd(), 'data', 'kb-inbox');
+const __dirname = dirname(fileURLToPath(import.meta.url));
+// In container: __dirname = /app/apps/bot/dist/export → ../../data/kb-inbox = /app/apps/bot/data/kb-inbox
+const DATA_DIR = join(__dirname, '..', '..', 'data', 'kb-inbox');
 const INBOX_FILE = join(DATA_DIR, 'inbox.json');
 
 /**
