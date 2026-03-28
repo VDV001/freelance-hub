@@ -16,7 +16,7 @@ import { HHParser } from '../parsers/hh.parser.js';
 import { FreelancehuntParser } from '../parsers/freelancehunt.parser.js';
 import { HabrParser } from '../parsers/habr.parser.js';
 import { getHabrConfig } from '../telegram/commands/habr.js';
-import { articlesRepo, hashUrl } from '../storage/articles.repository.js';
+import { articlesRepo } from '../storage/articles.repository.js';
 import { formatArticle } from '../telegram/formatters/article.formatter.js';
 
 function createParser(config: ParserConfig): BaseParser | null {
@@ -124,11 +124,6 @@ async function runHabrParsers(): Promise<void> {
         await bot.api.sendMessage(channelId, message, {
           parse_mode: 'HTML',
           link_preview_options: { is_disabled: true },
-          reply_markup: {
-            inline_keyboard: [[
-              { text: '📥 В базу знаний', callback_data: `kb:${hashUrl(article.url)}` },
-            ]],
-          },
         });
         await new Promise((r) => setTimeout(r, 3000));
       } catch (err) {
