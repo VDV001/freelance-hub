@@ -1,4 +1,4 @@
-import { Bot } from 'grammy';
+import { Bot, InlineKeyboard } from 'grammy';
 import { env } from '../config/env.js';
 import { registerStartCommand } from './commands/start.js';
 import { registerFilterCommand } from './commands/filter.js';
@@ -7,6 +7,8 @@ import { registerStatsCommand } from './commands/stats.js';
 import { registerPlatformsCommand } from './commands/platforms.js';
 import { registerHelpCommand } from './commands/help.js';
 import { registerHabrCommand } from './commands/habr.js';
+import { articlesRepo } from '../storage/articles.repository.js';
+import { exportToInbox } from '../export/inbox.exporter.js';
 
 export const bot = new Bot(env.TELEGRAM_BOT_TOKEN, {
   client: {
@@ -41,3 +43,27 @@ registerPauseCommand(bot);
 registerStatsCommand(bot);
 registerPlatformsCommand(bot);
 registerHabrCommand(bot);
+
+// Callback: save article to knowledge base inbox
+bot.on('callback_query:data', async (ctx) => {
+  const data = ctx.callbackQuery.data;
+  if (data === 'noop') {
+    await ctx.answerCallbackQuery();
+    return;
+  }
+  if (!data.startsWith('kb:')) return;
+
+  const id = data.slice(3);
+  const article = articlesRepo.findById(id);
+  if (!article) {
+    await ctx.answerCallbackQuery({ text: 'Статья не найдена в БД' });
+    return;
+  }
+
+  const added = exportToInbox([article]);
+  const label = added ? '✅ Сохранено' : '✅ Уже в базе';
+  const keyboard = new InlineKeyboard().text(label, 'noop');
+
+  await ctx.editMessageReplyMarkup({ reply_markup: keyboard });
+  await ctx.answerCallbackQuery({ text: added ? 'Сохранено в базу знаний!' : 'Уже в базе знаний' });
+});

@@ -2,9 +2,14 @@ import { createHash } from 'node:crypto';
 import type { Article } from '@freelance-hub/shared';
 import { db } from './db.js';
 
-function hashUrl(url: string): string {
+export function hashUrl(url: string): string {
   return createHash('sha256').update(url).digest('hex').slice(0, 16);
 }
+
+const findByIdStmt = db.prepare(`
+  SELECT id, title, description, url, hub, author, tags, created_at as createdAt, fetched_at as fetchedAt
+  FROM articles WHERE id = ?
+`);
 
 const insertStmt = db.prepare(`
   INSERT OR IGNORE INTO articles (id, title, description, url, hub, author, tags, created_at)
@@ -56,6 +61,20 @@ export const articlesRepo = {
 
   getStats(): Array<{ hub: string; total: number; today: number; week: number }> {
     return statsStmt.all() as Array<{ hub: string; total: number; today: number; week: number }>;
+  },
+
+  findById(id: string): Omit<Article, 'id' | 'fetchedAt'> | null {
+    const row = findByIdStmt.get(id) as Record<string, string> | undefined;
+    if (!row) return null;
+    return {
+      title: row.title,
+      description: row.description,
+      url: row.url,
+      hub: row.hub,
+      author: row.author,
+      tags: JSON.parse(row.tags),
+      createdAt: row.createdAt,
+    };
   },
 
   cleanOld(): number {
