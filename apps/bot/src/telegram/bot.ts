@@ -28,7 +28,13 @@ bot.api.setMyCommands([
 ]);
 
 // Owner-only guard (must be before command handlers)
+// Allow kb: callback queries from channel (anonymous admin has different from.id)
 bot.use(async (ctx, next) => {
+  const cbData = ctx.callbackQuery?.data;
+  if (cbData?.startsWith('kb:') || cbData === 'noop') {
+    await next();
+    return;
+  }
   if (ctx.from?.id.toString() !== env.TELEGRAM_CHAT_ID) {
     return;
   }
