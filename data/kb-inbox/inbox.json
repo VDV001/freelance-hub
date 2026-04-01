@@ -1,82 +1,79 @@
 [
   {
-    "title": "Утекли исходники Claude Code",
-    "description": "Anthropic забыли добавить *.map в .npmignore — и весь исходный код Claude Code оказался в открытом доступе через npm. Тамагочи в терминале, система снов для консолидации памяти, режим прикрытия для коммитов в open-source, 30-минутные сессии планирования на удалённом Opus 4.6, мультиагентный рой с ко...",
-    "url": "https://habr.com/ru/companies/bar/articles/1017574/?utm_campaign=1017574&utm_source=habrahabr&utm_medium=rss",
-    "hub": "artificial_intelligence",
-    "author": "olegchir (Anarchic AI)",
+    "title": "Как настроить Server Side Rendering для индексации SPA приложений поисковиками",
+    "description": "Yandexbot заходит на ваш SPA сайт, получает пустой и уходит. Именно так выглядит индексация большинства одностраничных приложений без SSR. Страницы не попадают в выдачу, органический трафик стоит на нуле, а команда недоумевает: сайт же работает. Проблема не в качестве кода, а в архитектуре рендеринг...",
+    "url": "https://habr.com/ru/articles/1017642/?utm_campaign=1017642&utm_source=habrahabr&utm_medium=rss",
+    "hub": "reactjs",
+    "author": "franky_d_zoro",
     "tags": [
-      "Claude Code",
-      "Anthropic",
-      "утечка исходного кода",
-      "sourcemap",
-      "npm",
-      "AI-агент",
-      "мультиагентная оркестрация",
+      "seo",
+      "ssr",
+      "prerender",
+      "prerendering",
+      "spa",
+      "индексация",
+      "индексирование",
+      "индексирование сайта",
+      "seo-оптимизация",
+      "seo оптимизация"
+    ],
+    "createdAt": "2026-03-31T16:26:58.000Z"
+  },
+  {
+    "title": "Галлюцинации LLM — это артефакты сжатия. И это объясняет вообще всё",
+    "description": "Представьте: вам дают 10 терабайт текста и говорят — запихни это в файл на 70 гигабайт. Так, чтобы потом по любому вопросу можно было восстановить нужный кусок. Не точно, но близко. Не побайтово, но по смыслу. Вы бы сказали: «это lossy-компрессия, часть данных неизбежно потеряется». И были бы правы....",
+    "url": "https://habr.com/ru/articles/1017612/?utm_campaign=1017612&utm_source=habrahabr&utm_medium=rss",
+    "hub": "artificial_intelligence",
+    "author": "inkedsymon",
+    "tags": [
       "LLM",
-      "информационная безопасность",
-      "reverse engineering"
-    ],
-    "createdAt": "2026-03-31T14:00:37.000Z"
-  },
-  {
-    "title": "Закрытый контур без боли для разработчиков — миф или реальность?",
-    "description": "Всем привет! Меня зовут Александр Барыков, я руковожу платформенной командой DevOps и являюсь лидером DevOps-комьюнити в нашей компании. Сегодня хочу поделиться опытом, который мы накопили за последние четыре года. Речь пойдет о достаточно специфической, но знакомой многим теме – организации процесс...",
-    "url": "https://habr.com/ru/companies/moex/articles/1017424/?utm_campaign=1017424&utm_source=habrahabr&utm_medium=rss",
-    "hub": "devops",
-    "author": "abarykov (MOEX)",
-    "tags": [
-      "devops",
-      "devsecops",
-      "информационная безопасность",
-      "проверка подлинности",
-      "sandbox",
-      "whitelist",
-      "idp",
-      "internal developer platform",
-      "cicd",
-      "platform engineering"
-    ],
-    "createdAt": "2026-03-31T13:31:10.000Z"
-  },
-  {
-    "title": "Ultra Deep Research: триангуляция AI-поиска через три нейросети",
-    "description": "Вы спрашиваете нейросеть — она идёт в интернет и возвращает ответ. Но в какой именно интернет? Claude ищет через Brave. ChatGPT — через Bing. Gemini — через Google. Три разных поисковых движка, три разных среза, совпадение результатов около 20%. Я выстроил подход к AI-ресёрчу вокруг этого факта: три...",
-    "url": "https://habr.com/ru/articles/1017566/?utm_campaign=1017566&utm_source=habrahabr&utm_medium=rss",
-    "hub": "machine_learning",
-    "author": "egorsokolov",
-    "tags": [
-      "Deep Research",
-      "нейросети для поиска",
-      "Claude",
-      "ChatGPT",
-      "Gemini",
-      "AI\r\n  поиск",
-      "триангуляция",
-      "workflow",
-      "сравнение нейросетей",
-      "Perplexity"
-    ],
-    "createdAt": "2026-03-31T14:26:40.000Z"
-  },
-  {
-    "title": "ИИ-веганство — новый тренд? Технологии подарили нам возможности, тревогу и псевдоподдержку",
-    "description": "Каждый первый в моём окружении пользуется ChatGPT. По последним данным, количество еженедельных пользователей этого чат-бота стремится к миллиарду. Но в то же время НАФИ и «Ингосстрах» провели исследование, по результатам которого выяснилось, что 43% россиян готовы отказаться от ИИ навсегда. Давайте...",
-    "url": "https://habr.com/ru/articles/1017426/?utm_campaign=1017426&utm_source=habrahabr&utm_medium=rss",
-    "hub": "artificial_intelligence",
-    "author": "MegaplanCEO",
-    "tags": [
+      "машинное обучение",
       "искусственный интеллект",
-      "нейросети",
-      "исследование",
-      "обзор",
-      "ai",
-      "ии",
-      "anthropic",
-      "claude",
-      "chatgpt",
-      "gemini"
+      "теория информации",
+      "GPT",
+      "галлюцинации",
+      "сжатие данных",
+      "Шеннон",
+      "научпоп"
     ],
-    "createdAt": "2026-03-31T15:00:03.000Z"
+    "createdAt": "2026-03-31T16:52:29.000Z"
+  },
+  {
+    "title": "Claude Code для тех, кто не пишет код: полный разбор",
+    "description": "Приветы! Сегодня поговорим про Claude Code о том, как его использовать, если вы не разработчик. Не потому что он «революционный» или «ИИ будущего», а потому что он реально закрывает задачи, которые раньше занимали часы. Статья будет полезна продакт-менеджерам, маркетологам, фаундерам, дизайнерам – в...",
+    "url": "https://habr.com/ru/articles/1017668/?utm_campaign=1017668&utm_source=habrahabr&utm_medium=rss",
+    "hub": "artificial_intelligence",
+    "author": "Ata_Akhunzhanov",
+    "tags": [
+      "claude code",
+      "claude code skills",
+      "claude",
+      "skills",
+      "skills в claude",
+      "ии-агенты в бизнесе",
+      "ии помощник",
+      "ИИ для продакт-менеджера",
+      "ии для маркетологов"
+    ],
+    "createdAt": "2026-03-31T17:49:06.000Z"
+  },
+  {
+    "title": "Хватит просто писать код, попробуйте в нём выжить. Представляем GitCrab 1.0",
+    "description": "Время вялого вайбкодинга и медленных пайплайнов заканчивается. И пока большинство CI/CD инструментов помогают вам деплоить. GitCrab заставляет вас бороться. Нырнем глубже?",
+    "url": "https://habr.com/ru/articles/1006158/?utm_campaign=1006158&utm_source=habrahabr&utm_medium=rss",
+    "hub": "devops",
+    "author": "Wok_u3_cBuHuHbl",
+    "tags": [
+      "git",
+      "github",
+      "gitlab",
+      "cicd",
+      "devops",
+      "devtools",
+      "юмор",
+      "юмор на хабре",
+      "1 апреля"
+    ],
+    "createdAt": "2026-03-31T22:10:59.000Z"
   }
 ]
