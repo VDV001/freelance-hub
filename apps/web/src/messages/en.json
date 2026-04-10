@@ -186,6 +186,29 @@
         ]
       }
     },
+    "estimate_pro": {
+      "name": "EstimatePro",
+      "description": "Collaborative project estimation platform. Modular Monolith + Clean Architecture + DDD on Go 1.26 and Next.js 16 with PostgreSQL 18, Redis 8, MinIO. Telegram bot Esti with LLM parsing and two-stage prompt protection architecture.",
+      "commits": "69 commits",
+      "performance": "27,000+ lines of code, 145 tests, 57 API endpoints",
+      "features": {
+        "architecture": "Modular Monolith with 7 modules (auth, project, document, estimation, notify, bot, ws). Clean Architecture: domain → usecase → handler. DDD: entities with business logic, sentinel errors, value objects. Adapters in composition root, zero cross-module imports. 8 PostgreSQL migrations via goose",
+        "backend": "57 REST endpoints (Chi router). JWT auth with token rotation in Redis. OAuth2 Google/GitHub. PERT estimation aggregation. WebSocket real-time. Telegram bot Esti: 4 LLM providers (Claude/OpenAI/Grok/Ollama), 12 intents, inline keyboards, conversation memory, two-stage architecture (classifier + personality formatter). Notifications: in-app + email + Telegram",
+        "devops": "Docker Compose (PostgreSQL 18, Redis 8, MinIO, Go backend). GitHub Actions CI/CD. CORS allowlist, rate limiting (10 req/min on auth), MaxBodySize middleware, RequireProjectMember middleware for IDOR protection",
+        "testing": "145 test functions across 25 files. Table-driven tests, function-field mocks. Coverage: all usecases, domain logic, handlers, LLM providers, Telegram client (httptest), webhook, session flows. TDD for estimation (parser + aggregation)"
+      },
+      "comparison": {
+        "title": "EstimatePro vs existing solutions",
+        "headers": ["Feature", "Planning Poker / Scrumpoker-online", "EstimatePro"],
+        "rows": [
+          ["PERT aggregation (min/likely/max)", "Only numeric voting or Fibonacci", "Three-point PERT with automatic summary"],
+          ["Telegram bot with AI", "None — web interface only", "Esti bot: free text → LLM → action, 4 providers"],
+          ["Spec upload with versioning", "No document support", "PDF/DOCX/XLSX/MD/TXT/CSV in MinIO, versions, tags, signed/final"],
+          ["Self-hosted + Open Source", "SaaS, data with provider", "AGPL-3.0, full data control, Docker Compose"],
+          ["Cost", "$5–25/mo per team", "Free (self-hosted), only LLM API costs"]
+        ]
+      }
+    },
     "lexis": {
       "name": "Lexis",
       "description": "AI-powered language tutor: Go modular monolith (Clean Architecture, DDD) + Next.js 16 frontend. 4 AI providers, SM-2 spaced repetition, JWT auth with token rotation, PostgreSQL, Redis.",

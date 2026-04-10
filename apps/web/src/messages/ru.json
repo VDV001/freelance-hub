@@ -186,6 +186,29 @@
         ]
       }
     },
+    "estimate_pro": {
+      "name": "EstimatePro",
+      "description": "Коллаборативная платформа для оценки проектов. Modular Monolith + Clean Architecture + DDD на Go 1.26 и Next.js 16 с PostgreSQL 18, Redis 8, MinIO. Telegram-бот Эсти с LLM-парсингом и двухэтапной архитектурой защиты промпта.",
+      "commits": "69 коммитов",
+      "performance": "27 000+ строк кода, 145 тестов, 57 API endpoints",
+      "features": {
+        "architecture": "Modular Monolith с 7 модулями (auth, project, document, estimation, notify, bot, ws). Clean Architecture: domain → usecase → handler. DDD: entities с бизнес-логикой, sentinel errors, value objects. Адаптеры в composition root, zero cross-module imports. 8 PostgreSQL миграций через goose",
+        "backend": "57 REST endpoints (Chi router). JWT auth с token rotation в Redis. OAuth2 Google/GitHub. PERT-агрегация оценок. WebSocket real-time. Telegram-бот Эсти: 4 LLM-провайдера (Claude/OpenAI/Grok/Ollama), 12 intents, inline-кнопки, память разговоров, двухэтапная архитектура (classifier + personality formatter). Уведомления: in-app + email + Telegram",
+        "devops": "Docker Compose (PostgreSQL 18, Redis 8, MinIO, Go backend). GitHub Actions CI/CD. CORS allowlist, rate limiting (10 req/min на auth), MaxBodySize middleware, RequireProjectMember middleware для IDOR-защиты",
+        "testing": "145 тестовых функций в 25 файлах. Table-driven тесты, function-field mocks. Покрытие: все usecases, domain logic, handlers, LLM providers, Telegram client (httptest), webhook, session flows. TDD для estimation (parser + aggregation)"
+      },
+      "comparison": {
+        "title": "EstimatePro vs существующие решения",
+        "headers": ["Возможность", "Planning Poker / Scrumpoker-online", "EstimatePro"],
+        "rows": [
+          ["PERT-агрегация (min/likely/max)", "Только числовое голосование или Fibonacci", "Трёхточечная PERT с автоматической сводкой"],
+          ["Telegram-бот с AI", "Нет — только веб-интерфейс", "Бот Эсти: свободный текст → LLM → действие, 4 провайдера"],
+          ["Загрузка ТЗ с версионированием", "Нет поддержки документов", "PDF/DOCX/XLSX/MD/TXT/CSV в MinIO, версии, теги, signed/final"],
+          ["Self-hosted + Open Source", "SaaS, данные у провайдера", "AGPL-3.0, полный контроль данных, Docker Compose"],
+          ["Стоимость", "$5–25/мес за команду", "Бесплатно (self-hosted), платно только LLM API"]
+        ]
+      }
+    },
     "lexis": {
       "name": "Lexis",
       "description": "AI-репетитор иностранных языков: модульный монолит на Go (Clean Architecture, DDD) + Next.js 16 фронтенд. 4 AI-провайдера, SM-2 интервальное повторение, JWT auth с token rotation, PostgreSQL, Redis.",

@@ -39,6 +39,21 @@ const PROJECTS = [
     hasComparison: false,
   },
   {
+    key: "estimate_pro",
+    github: "https://github.com/VDV001/estimate-pro",
+    languages: [
+      { name: "Go", percent: 56.5, color: "bg-[#00ADD8]" },
+      { name: "TypeScript", percent: 33.4, color: "bg-[#3178C6]" },
+      { name: "JSON", percent: 9.1, color: "bg-[#A8B9CC]" },
+      { name: "SQL", percent: 1.0, color: "bg-[#E38C00]" },
+    ] as LangBar[],
+    features: ["architecture", "backend", "devops", "testing"] as const,
+    featureIcons: { architecture: "\u{1F3D7}\uFE0F", backend: "\u{2699}\uFE0F", devops: "\u{1F680}", testing: "\u{1F9EA}" },
+    techBadges: ["Go 1.26", "Next.js 16", "TypeScript", "PostgreSQL 18", "Redis 8", "MinIO", "Chi", "pgx", "TanStack Query", "Zustand", "Tailwind CSS v4", "shadcn/ui", "Three.js", "WebSocket", "JWT", "OAuth2", "Docker", "GitHub Actions", "Claude API", "OpenAI API", "Ollama", "Telegram Bot API"],
+    hasRedisTable: false,
+    hasComparison: true,
+  },
+  {
     key: "lexis",
     github: "https://github.com/VDV001/lexis",
     languages: [
