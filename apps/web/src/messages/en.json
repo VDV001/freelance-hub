@@ -139,6 +139,7 @@
   },
   "projects": {
     "title": "Projects",
+    "freshness_notice": "Projects evolve faster than this resume gets updated. Check the GitHub repos for the latest code.",
     "academic_secretary": {
       "name": "Academic Secretary IS",
       "description": "Modular monolith on Go: DDD + Clean Architecture, encapsulated domains. In-memory EventBus with Kafka abstraction. CQRS + Event Sourcing + Repository + Unit of Work. 22 PostgreSQL 17 SQL migrations.",
@@ -160,6 +161,30 @@
           ["Login (full flow)", "350–400 ms", "200–250 ms", "40% faster"],
           ["Throughput", "~250 req/s", "~1000 req/s", "4x more"]
         ]
+      }
+    },
+    "floq": {
+      "name": "Floq — AI Sales Assistant",
+      "description": "Full-stack B2B CRM with AI-powered cold outreach, multi-channel sequences (Email + Telegram + phone), and automated lead qualification. Clean Architecture, DDD, 20 PostgreSQL migrations, 51 API endpoints.",
+      "commits": "88 commits",
+      "performance": "19,469 lines of code, 130+ unit tests",
+      "features": {
+        "architecture": "Clean Architecture (handler → usecase → repository → domain), DDD with value objects (LeadStatus, Channel, OutboundStatus), port/adapter interfaces, compile-time interface checks, TxManager for transactions, DTO mapping without json tags in domain layer, 20 SQL migrations (golang-migrate), anti-corruption layers (ProspectReader, LeadCreator)",
+        "backend": "51 REST API endpoints on Go 1.26 + chi v5, JWT auth (access + refresh tokens), pluggable AI provider (Claude/OpenAI/Groq/Ollama) with runtime switching from DB, SMTP sending via mail.ru/Yandex/Gmail (TLS 465 + STARTTLS 587), IMAP polling for inbound emails (go-imap/v2), Telegram MTProto client (gotd/td) for personal account outreach, built-in email verifier (MX/SMTP probe/disposable filter), 2GIS API parser + website email scraper, AI chat assistant with DB context injection, prompt feedback loop, tracking pixel for open/reply tracking, cron-based follow-up system",
+        "devops": "Docker Compose (PostgreSQL 18 + Redis 8 + Ollama + Backend), GitHub Actions CI/CD (Go build/test + Next.js lint/build), multi-stage Alpine image, OrbStack for local development",
+        "testing": "130+ unit tests across 16 packages (testify, race detector), coverage: auth (JWT middleware, token generation), AI client (extractJSON, prompt resolution, qualification parsing), email verification, settings DTO mapping, chat system prompt building"
+      }
+    },
+    "lexis": {
+      "name": "Lexis",
+      "description": "AI-powered language tutor: Go modular monolith (Clean Architecture, DDD) + Next.js 16 frontend. 4 AI providers, SM-2 spaced repetition, JWT auth with token rotation, PostgreSQL, Redis.",
+      "commits": "73 commits",
+      "performance": "83 unit tests, 12 test packages",
+      "features": {
+        "architecture": "Modular monolith (4 modules: auth, tutor, vocabulary, progress), layered domain → usecase → handler → infra. ProviderRegistry as domain interface. Auto-migrations via golang-migrate with embedded SQL. In-process event bus (pub/sub) for cross-module communication. RFC 7807 Problem Detail errors",
+        "backend": "JWT access/refresh token rotation with reuse detection and user-level blacklist via Redis. 4 AI providers (Claude, GPT-4o, Qwen, Gemini) with SSE streaming. SM-2 spaced repetition for vocabulary. 5 exercise modes (chat, quiz, translate, gap, scramble). Domain-level validation with sentinel errors",
+        "devops": "Docker Compose (PostgreSQL 18, Redis 8). GitHub Actions CI: golangci-lint, go test -race, Next.js build, Playwright e2e. Ldflags version injection. MaxBodySize, RequireJSON, RateLimit (prefix-based, fail-closed for login) middleware",
+        "testing": "83 unit tests across 12 packages. Gomock for auth service, hand-written mocks for handler tests. Coverage includes: token rotation, SM-2 algorithm, goal progress, handler CRUD, eventbus concurrency, middleware auth. Playwright e2e for auth flow"
       }
     }
   },
