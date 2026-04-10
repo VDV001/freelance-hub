@@ -17,3 +17,4 @@ dist/
 tsconfig.tsbuildinfo
 .mcp.json
 .serena/
+apps/bot/docker-compose.yml
