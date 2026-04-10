@@ -173,6 +173,17 @@
         "backend": "51 REST API-эндпоинт на Go 1.26 + chi v5, JWT-авторизация (access + refresh), pluggable AI-провайдер (Claude/OpenAI/Groq/Ollama) с runtime-переключением из БД, SMTP-отправка через mail.ru/Yandex/Gmail (TLS 465 + STARTTLS 587), IMAP-polling входящей почты (go-imap/v2), Telegram MTProto клиент (gotd/td) для рассылки через личный аккаунт, email-верификатор (MX/SMTP probe/disposable filter), парсинг 2GIS API + website scraper, AI-чат ассистент с контекстом из БД, prompt feedback loop, tracking pixel для open/reply трекинга, cron-система фоллоуапов",
         "devops": "Docker Compose (PostgreSQL 18 + Redis 8 + Ollama + Backend), GitHub Actions CI/CD (Go build/test + Next.js lint/build), multi-stage Alpine image, OrbStack для локальной разработки",
         "testing": "130+ unit-тестов в 16 пакетах (testify, race detector), покрытие: auth (JWT middleware, token generation), AI client (extractJSON, prompt resolution, qualification parsing), email verification, settings DTO mapping, chat system prompt building"
+      },
+      "comparison": {
+        "title": "Floq vs SaaS-конкуренты",
+        "headers": ["Возможность", "Apollo / Lemlist / Reply.io", "Floq"],
+        "rows": [
+          ["Self-hosted / свои данные", "Нет — только SaaS, данные на чужих серверах", "Полностью на вашем сервере, Ollama = ноль утечек"],
+          ["Telegram-аутрич (личный аккаунт)", "Нет — максимум Email + LinkedIn", "MTProto через gotd/td — 900M+ аудитория без спам-фильтров"],
+          ["Выбор AI-провайдера", "Один встроенный (обычно обёртка OpenAI)", "4 провайдера с runtime-переключением из БД"],
+          ["AI обучается на правках менеджера", "Нет — статичная генерация", "Prompt feedback loop: качество писем растёт"],
+          ["Стоимость", "$30–$160/мес за пользователя", "$0 — self-hosted, платите только за API-токены"]
+        ]
       }
     },
     "lexis": {
@@ -185,6 +196,17 @@
         "backend": "JWT access/refresh token rotation с reuse detection и user-level blacklist через Redis. 4 AI-провайдера (Claude, GPT-4o, Qwen, Gemini) с SSE-стримингом. SM-2 spaced repetition для словаря. 5 режимов упражнений (chat, quiz, translate, gap, scramble). Валидация на уровне домена с sentinel errors",
         "devops": "Docker Compose (PostgreSQL 18, Redis 8). GitHub Actions CI: golangci-lint, go test -race, Next.js build, Playwright e2e. Ldflags version injection. MaxBodySize, RequireJSON, RateLimit (prefix-based, fail-closed для login) middleware",
         "testing": "83 unit-теста в 12 пакетах. Gomock для auth service, hand-written mocks для handler tests. Покрытие: token rotation, SM-2 алгоритм, goal progress, handler CRUD, eventbus concurrency, middleware auth. Playwright e2e для auth flow"
+      },
+      "comparison": {
+        "title": "Lexis vs существующие решения",
+        "headers": ["Возможность", "Duolingo / Anki / ChatGPT", "Lexis"],
+        "rows": [
+          ["SM-2 + генеративный AI", "Или SR без AI (Anki), или AI без SR (ChatGPT)", "SM-2 алгоритм + 4 AI-провайдера в одной системе"],
+          ["Режимы упражнений", "Duolingo: шаблоны / ChatGPT: только чат", "5 AI-генерируемых режимов: chat, quiz, translate, gap, scramble"],
+          ["Выбор AI-модели", "Привязка к одному провайдеру", "Claude, GPT-4o, Qwen, Gemini — без vendor lock-in"],
+          ["Self-hosted / приватность", "Нет (кроме Anki без AI)", "Полностью на своём сервере, оплата только API-токенов"],
+          ["Стоимость", "Duolingo Max $30/мес, ChatGPT $20–200/мес", "$0 — self-hosted + свой API-ключ"]
+        ]
       }
     }
   },

@@ -22,6 +22,7 @@ const PROJECTS = [
     featureIcons: { architecture: "\u{1F3D7}\uFE0F", backend: "\u{2699}\uFE0F", devops: "\u{1F680}", testing: "\u{1F9EA}" },
     techBadges: ["Go", "Next.js 16", "TypeScript", "PostgreSQL", "Redis", "Docker", "GitHub Actions", "Tailwind CSS", "shadcn/ui", "chi", "pgx/v5", "JWT", "SMTP", "IMAP", "Telegram MTProto", "gotd/td", "Anthropic SDK", "OpenAI SDK", "Groq", "Ollama", "golang-migrate"],
     hasRedisTable: false,
+    hasComparison: true,
   },
   {
     key: "academic_secretary",
@@ -35,6 +36,7 @@ const PROJECTS = [
     featureIcons: { architecture: "\u{1F3D7}\uFE0F", backend: "\u{2699}\uFE0F", devops: "\u{1F680}", testing: "\u{1F9EA}" },
     techBadges: ["Go", "TypeScript", "DDD", "Event Sourcing", "Redis", "WebSocket", "PostgreSQL", "Docker", "Docker Swarm"],
     hasRedisTable: true,
+    hasComparison: false,
   },
   {
     key: "lexis",
@@ -50,6 +52,7 @@ const PROJECTS = [
     featureIcons: { architecture: "\u{1F3D7}\uFE0F", backend: "\u{2699}\uFE0F", devops: "\u{1F680}", testing: "\u{1F9EA}" },
     techBadges: ["Go", "Chi", "PostgreSQL", "Redis", "JWT", "Next.js 16", "React 19", "TypeScript", "Zustand", "Docker", "GitHub Actions", "Playwright", "golang-migrate", "pgx", "bcrypt"],
     hasRedisTable: false,
+    hasComparison: true,
   },
 ] as const;
 
@@ -78,7 +81,7 @@ export function ProjectsSection() {
 }
 
 function ProjectCard({ project, t }: { project: (typeof PROJECTS)[number]; t: ReturnType<typeof useTranslations<"projects">> }) {
-  const { key, languages, features, featureIcons, techBadges, hasRedisTable } = project;
+  const { key, languages, features, featureIcons, techBadges, hasRedisTable, hasComparison } = project;
   const github = project.github as string | null;
 
   return (
@@ -131,6 +134,32 @@ function ProjectCard({ project, t }: { project: (typeof PROJECTS)[number]; t: Re
                 </table>
               </div>
               <p className="text-xs text-text-muted mt-3">{t(`${key}.redis.decorator`)}</p>
+            </div>
+          )}
+
+          {hasComparison && (
+            <div className="reveal reveal-delay-1 mb-6">
+              <h4 className="text-lg font-semibold text-accent mb-3">{t(`${key}.comparison.title`)}</h4>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border-collapse">
+                  <thead>
+                    <tr>
+                      {(t.raw(`${key}.comparison.headers`) as string[]).map((h) => (
+                        <th key={h} className="text-left px-3 py-2 bg-bg-secondary text-text-muted font-medium border-b border-border">{h}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {(t.raw(`${key}.comparison.rows`) as string[][]).map((row, i) => (
+                      <tr key={i} className="border-b border-border/50">
+                        <td className="px-3 py-2 font-medium">{row[0]}</td>
+                        <td className="px-3 py-2 text-text-muted">{row[1]}</td>
+                        <td className="px-3 py-2 text-green-400 font-semibold">{row[2]}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           )}
 

@@ -173,6 +173,17 @@
         "backend": "51 REST API endpoints on Go 1.26 + chi v5, JWT auth (access + refresh tokens), pluggable AI provider (Claude/OpenAI/Groq/Ollama) with runtime switching from DB, SMTP sending via mail.ru/Yandex/Gmail (TLS 465 + STARTTLS 587), IMAP polling for inbound emails (go-imap/v2), Telegram MTProto client (gotd/td) for personal account outreach, built-in email verifier (MX/SMTP probe/disposable filter), 2GIS API parser + website email scraper, AI chat assistant with DB context injection, prompt feedback loop, tracking pixel for open/reply tracking, cron-based follow-up system",
         "devops": "Docker Compose (PostgreSQL 18 + Redis 8 + Ollama + Backend), GitHub Actions CI/CD (Go build/test + Next.js lint/build), multi-stage Alpine image, OrbStack for local development",
         "testing": "130+ unit tests across 16 packages (testify, race detector), coverage: auth (JWT middleware, token generation), AI client (extractJSON, prompt resolution, qualification parsing), email verification, settings DTO mapping, chat system prompt building"
+      },
+      "comparison": {
+        "title": "Floq vs SaaS Competitors",
+        "headers": ["Capability", "Apollo / Lemlist / Reply.io", "Floq"],
+        "rows": [
+          ["Self-hosted / data ownership", "No — SaaS only, data on third-party servers", "Fully on your server, Ollama = zero data leaks"],
+          ["Telegram outreach (personal account)", "No — Email + LinkedIn at most", "MTProto via gotd/td — 900M+ audience, no spam filters"],
+          ["AI provider choice", "One built-in (usually OpenAI wrapper)", "4 providers with runtime switching from DB"],
+          ["AI learns from manager edits", "No — static generation", "Prompt feedback loop: email quality improves over time"],
+          ["Cost", "$30–$160/mo per user", "$0 — self-hosted, pay only for API tokens"]
+        ]
       }
     },
     "lexis": {
@@ -185,6 +196,17 @@
         "backend": "JWT access/refresh token rotation with reuse detection and user-level blacklist via Redis. 4 AI providers (Claude, GPT-4o, Qwen, Gemini) with SSE streaming. SM-2 spaced repetition for vocabulary. 5 exercise modes (chat, quiz, translate, gap, scramble). Domain-level validation with sentinel errors",
         "devops": "Docker Compose (PostgreSQL 18, Redis 8). GitHub Actions CI: golangci-lint, go test -race, Next.js build, Playwright e2e. Ldflags version injection. MaxBodySize, RequireJSON, RateLimit (prefix-based, fail-closed for login) middleware",
         "testing": "83 unit tests across 12 packages. Gomock for auth service, hand-written mocks for handler tests. Coverage includes: token rotation, SM-2 algorithm, goal progress, handler CRUD, eventbus concurrency, middleware auth. Playwright e2e for auth flow"
+      },
+      "comparison": {
+        "title": "Lexis vs Existing Solutions",
+        "headers": ["Capability", "Duolingo / Anki / ChatGPT", "Lexis"],
+        "rows": [
+          ["SM-2 + generative AI", "Either SR without AI (Anki) or AI without SR (ChatGPT)", "SM-2 algorithm + 4 AI providers in one system"],
+          ["Exercise modes", "Duolingo: templates / ChatGPT: chat only", "5 AI-generated modes: chat, quiz, translate, gap, scramble"],
+          ["AI model choice", "Locked to one provider", "Claude, GPT-4o, Qwen, Gemini — no vendor lock-in"],
+          ["Self-hosted / privacy", "No (except Anki without AI)", "Fully on your server, pay only for API tokens"],
+          ["Cost", "Duolingo Max $30/mo, ChatGPT $20–200/mo", "$0 — self-hosted + your own API key"]
+        ]
       }
     }
   },
