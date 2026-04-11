@@ -4507,5 +4507,22 @@
       "искусственный интеллект"
     ],
     "createdAt": "2026-04-11T06:55:46.000Z"
+  },
+  {
+    "title": "Нейросеть для создания презентаций бесплатно в 2026: тестирую Kimi Slides, Gamma и NotebookLM",
+    "description": "Протестировал три AI-генератора презентаций на реальных задачах. Kimi Slides отдаёт редактируемый .pptx, Gamma делает красивые веб-страницы, NotebookLM строит слайды строго по вашим документам без галлюцинаций. Ни один не выдаёт готовый результат для сцены — но черновик за 30 минут вместо 4 часов уж...",
+    "url": "https://habr.com/ru/articles/1022224/?utm_campaign=1022224&utm_source=habrahabr&utm_medium=rss",
+    "hub": "artificial_intelligence",
+    "author": "nlaik",
+    "tags": [
+      "ai",
+      "презентации",
+      "нейросети",
+      "powerpoint",
+      "gamma",
+      "notebooklm",
+      "productivity"
+    ],
+    "createdAt": "2026-04-11T09:10:03.000Z"
   }
 ]
