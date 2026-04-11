@@ -4098,5 +4098,248 @@
       "верификация"
     ],
     "createdAt": "2026-04-10T04:15:33.000Z"
+  },
+  {
+    "title": "Контекстная амнезия: три агента, три IDE, ноль общей памяти",
+    "description": "Представьте: вы наняли идеального сотрудника. Он пишет код как senior, разбирается в архитектуре за минуты, работает 24/7 без выгорания. Но у него одна особенность - каждое утро он забывает абсолютно всё. Не помнит, что делал вчера. Не знает, почему в платёжном модуле реализован тот самый workaround...",
+    "url": "https://habr.com/ru/articles/1021622/?utm_campaign=1021622&utm_source=habrahabr&utm_medium=rss",
+    "hub": "artificial_intelligence",
+    "author": "C0Ally",
+    "tags": [
+      "devtools",
+      "управление разработкой",
+      "будущее it",
+      "ai agents",
+      "инструменты разработки",
+      "программирование",
+      "cursor",
+      "claude code",
+      "искусственный интеллект"
+    ],
+    "createdAt": "2026-04-10T05:15:55.000Z"
+  },
+  {
+    "title": "Личный опыт освоения агентов",
+    "description": "Сначала это были чужие истории. Кто-то из знакомых рассказывал, как попросил ChatGPT написать письмо. Кто-то хвастался сгенерированной картинкой. Я слушал с некоторым скепсисом и небольшим любопытством — зачем людям может такое понадобиться? Потом попробовал сам. Сначала просто спрашивал, как сделат...",
+    "url": "https://habr.com/ru/articles/1021588/?utm_campaign=1021588&utm_source=habrahabr&utm_medium=rss",
+    "hub": "artificial_intelligence",
+    "author": "iivvaall",
+    "tags": [
+      "психология программирования",
+      "ии-агенты"
+    ],
+    "createdAt": "2026-04-10T07:03:30.000Z"
+  },
+  {
+    "title": "Как я выбираю моменты для Shorts: почему LLM + транскрипт почти всегда дают мусор",
+    "description": "Это третья статья про мой \"аниме завод\" — систему, которая автоматически превращает длинные эпизоды в Shorts. Если хотите полный контекст, вот предыдущие части: Читать далее",
+    "url": "https://habr.com/ru/articles/1021552/?utm_campaign=1021552&utm_source=habrahabr&utm_medium=rss",
+    "hub": "artificial_intelligence",
+    "author": "i_alakey",
+    "tags": [
+      "llm",
+      "shorts",
+      "python",
+      "cv",
+      "computer vision",
+      "signal processing",
+      "multimodal",
+      "transcript",
+      "youtube shorts",
+      "ai"
+    ],
+    "createdAt": "2026-04-10T07:18:57.000Z"
+  },
+  {
+    "title": "«Дистилляция» сотрудников: как китайский тренд превращает работу людей в обучающие датасеты",
+    "description": "Когда тебя решили заменить ИИ-агентом и слить по-тихому. Китайский проект Colleague Skill завирусился на GitHub с идеей оцифровать коллегу перед его увольнением — и случайно вскрыл юридическую и этическую бомбу, которая уже тикает в каждой компании. Читать далее",
+    "url": "https://habr.com/ru/articles/1021666/?utm_campaign=1021666&utm_source=habrahabr&utm_medium=rss",
+    "hub": "artificial_intelligence",
+    "author": "CratosArt",
+    "tags": [
+      "искусственный интеллект",
+      "карьера в it",
+      "законодательство и it",
+      "будущее здесь"
+    ],
+    "createdAt": "2026-04-10T07:16:44.000Z"
+  },
+  {
+    "title": "Как создать ИИ аватар в Telegram Mini App: React, Django, HeyGen API и генерация видео",
+    "description": "Завернул AI-генерацию ИИ аватаров в Telegram Mini App: загружаешь фото, пишешь текст — бот присылает видео, где аватар произносит этот текст. Стек: React 19 + Django + Celery + HeyGen API. Рассказываю про авторизацию через initData, поллинг асинхронных задач, и почему подключение T-Bank Acquiring по...",
+    "url": "https://habr.com/ru/articles/1021678/?utm_campaign=1021678&utm_source=habrahabr&utm_medium=rss",
+    "hub": "reactjs",
+    "author": "nlaik",
+    "tags": [
+      "telegram",
+      "mini-app",
+      "django",
+      "react",
+      "ai",
+      "heyGen",
+      "платежи"
+    ],
+    "createdAt": "2026-04-10T07:38:25.000Z"
+  },
+  {
+    "title": "Какую LLM ставить в production для контента на русском? Протестировали 18 моделей — одна в 130× дешевле при 91% качества",
+    "description": "GPT-5.4 пишет лучше всех — 97 баллов из 100. Но $0.10 за вызов. При 10 000 генераций в месяц — $1000. А мы нашли модель, которая справляется на 91% и стоит $0.0008. Те же 10 000 генераций — $8. Разница — $992 каждый месяц. Мы строим продукт, где LLM генерирует образовательный контент для клиентов. П...",
+    "url": "https://habr.com/ru/articles/1021388/?utm_campaign=1021388&utm_source=habrahabr&utm_medium=rss",
+    "hub": "artificial_intelligence",
+    "author": "Maslennikovig",
+    "tags": [
+      "LLM",
+      "Benchmarks",
+      "AI",
+      "OpenRouter",
+      "Claude",
+      "GPT",
+      "Qwen",
+      "Quality Assessment",
+      "NLP"
+    ],
+    "createdAt": "2026-04-10T07:30:49.000Z"
+  },
+  {
+    "title": "Где брать данные о видимости в нейросетях: сервисы и ключевые метрики GEO и AEO",
+    "description": "Привычная модель интернет-поиска постепенно меняется. Все чаще люди получают ответы напрямую из нейросетей, минуя сайты. По данным hh.ru, 58% пользователей в России, которые используют нейросети, доверяют им именно поиск информации. Даже в классических поисковых системах роль ИИ усиливается: по данн...",
+    "url": "https://habr.com/ru/companies/click/articles/1021440/?utm_campaign=1021440&utm_source=habrahabr&utm_medium=rss",
+    "hub": "artificial_intelligence",
+    "author": "Clickru (Click.ru)",
+    "tags": [
+      "seo",
+      "seo-оптимизация",
+      "seo-продвижение",
+      "geo",
+      "aeo",
+      "продвижение сайтов",
+      "нейросети"
+    ],
+    "createdAt": "2026-04-10T08:00:01.000Z"
+  },
+  {
+    "title": "Shared или выделенный CPU: гайд о том, как не ошибиться с выбором конфигурации сервера",
+    "description": "Привет, Хабр! На связи Егор Сапун, руководитель направления сертификации инфраструктуры Рег.облака. Shared CPU и выделенный — не вопрос «лучше или хуже». Это два разных инструмента, и ошибка чаще всего одна: берут не тот под задачу. В этой статье попытаемся разобраться, какая конфигурация сервера и...",
+    "url": "https://habr.com/ru/companies/runity/articles/1021688/?utm_campaign=1021688&utm_source=habrahabr&utm_medium=rss",
+    "hub": "cloud_services",
+    "author": "runity (Рунити)",
+    "tags": [
+      "рег.облако",
+      "облака",
+      "cpu",
+      "shared hosting",
+      "shared storage",
+      "dedicated",
+      "dedicated server",
+      "dedicated сервер",
+      "152-фз",
+      "диски"
+    ],
+    "createdAt": "2026-04-10T08:01:02.000Z"
+  },
+  {
+    "title": "Настройка Claude Code: спиннер-пасхалки, скрытые параметры settings.json и CLAUDE.md, о которых не пишут в документации",
+    "description": "Пока Claude Code думает, в терминале мелькают Noodling, Honking, Clauding — 56 слов-пасхалок, систему которых внутри Anthropic зовут Tengu. Но это только верхушка. Собрал всё, что можно настроить: spinnerVerbs, CLAUDE.md как память между сессиями, permissions для защиты .env, автоформатирование чере...",
+    "url": "https://habr.com/ru/articles/1021696/?utm_campaign=1021696&utm_source=habrahabr&utm_medium=rss",
+    "hub": "artificial_intelligence",
+    "author": "nlaik",
+    "tags": [
+      "claude-code",
+      "ai",
+      "настройка",
+      "terminal",
+      "разработка",
+      "anthropic"
+    ],
+    "createdAt": "2026-04-10T08:15:41.000Z"
+  },
+  {
+    "title": "Проектирование микросервисов на Go: типичные сложности и лучшие практики",
+    "description": "Баланс между производительностью, читаемостью и поддерживаемостью — ключевая задача при разработке микросервисов на Go. На практике всё сложнее из-за неочевидных факторов: от влияния частоты вызовов GC на время отклика до последствий избыточной вложенности в контрактах API. Если не учесть эти нюансы...",
+    "url": "https://habr.com/ru/companies/vk/articles/1021702/?utm_campaign=1021702&utm_source=habrahabr&utm_medium=rss",
+    "hub": "go",
+    "author": "artemk1337 (VK)",
+    "tags": [
+      "go",
+      "highload",
+      "микросервисы",
+      "производительность",
+      "читаемость",
+      "поддерживаемость",
+      "оптимизация"
+    ],
+    "createdAt": "2026-04-10T10:07:15.000Z"
+  },
+  {
+    "title": "Запуск без копейки: 5 бесплатных маркетинговых инструментов для старта бизнеса",
+    "description": "TL;DR: В статье описаны 5 методов запуска маркетинга без бюджета: ручной аутрич в VK/Telegram/LinkedIn (конверсия ~1% в сделку), контент-маркетинг на Habr/VC.ru/Дзен (0-5 обращений на статью), нетворкинг в профессиональных Telegram-чатах (1-2 обращения в месяц на чат), карточки в Яндекс.Картах и 2ГИ...",
+    "url": "https://habr.com/ru/articles/1021786/?utm_campaign=1021786&utm_source=habrahabr&utm_medium=rss",
+    "hub": "artificial_intelligence",
+    "author": "Lastman",
+    "tags": [
+      "Маркетинг",
+      "Стартапы",
+      "Малый бизнес",
+      "Привлечение трафика"
+    ],
+    "createdAt": "2026-04-10T10:14:21.000Z"
+  },
+  {
+    "title": "[Перевод] Почему я всё ещё выбираю MCP, а не Skills",
+    "description": "AI-сообщество активно продвигает Skills как новый стандарт для расширения возможностей LLM. Я с этим не согласен. Skills отлично работают как чистая передача знаний — когда нужно объяснить модели, как использовать уже установленный инструмент. Но для подключения к реальным сервисам Model Context Pro...",
+    "url": "https://habr.com/ru/companies/haulmont/articles/1021768/?utm_campaign=1021768&utm_source=habrahabr&utm_medium=rss",
+    "hub": "artificial_intelligence",
+    "author": "haulmont (Haulmont)",
+    "tags": [
+      "MCP",
+      "Model Context Protocol",
+      "Skills",
+      "Claude Code",
+      "LLM-интеграции",
+      "AI-инструменты",
+      "Claude",
+      "архитектура AI",
+      "CLI",
+      "инструменты разработчика"
+    ],
+    "createdAt": "2026-04-10T10:13:31.000Z"
+  },
+  {
+    "title": "JSON_TABLE в PostgreSQL: превращаем JSON в реляционные данные одним запросом",
+    "description": "JSON в PostgreSQL давно перестал быть экзотикой, но работать с ним по-реляционному до сих пор приходилось не самым изящным способом: jsonb_array_elements, LATERAL, ручные касты, обработка ошибок на честном слове. В PostgreSQL 17 появился JSON_TABLE — стандартный SQL/JSON-механизм, который превращает...",
+    "url": "https://habr.com/ru/companies/otus/articles/1015526/?utm_campaign=1015526&utm_source=habrahabr&utm_medium=rss",
+    "hub": "postgresql",
+    "author": "badcasedaily1 (OTUS)",
+    "tags": [
+      "postqresql",
+      "JSON_TABLE",
+      "jsonb",
+      "jsonpath",
+      "реляционные данные",
+      "обработка JSON",
+      "запросы PostgreSQL",
+      "типизация данных"
+    ],
+    "createdAt": "2026-04-10T10:40:57.000Z"
+  },
+  {
+    "title": "KV-Cache в LLM: разбираем инференс через 9 ключевых вопросов",
+    "description": "Почему Cache Read и Cache Write стоят денег и как работает Prompt Caching? Разбираем KV-Cache через 9 ключевых вопросов. Разобраться",
+    "url": "https://habr.com/ru/articles/1021832/?utm_campaign=1021832&utm_source=habrahabr&utm_medium=rss",
+    "hub": "artificial_intelligence",
+    "author": "YUNGC0DE",
+    "tags": [
+      "машинное обучение",
+      "машинное обучение. нейросети",
+      "llm",
+      "gpu",
+      "transformers",
+      "kv-cache",
+      "prompt caching",
+      "attention",
+      "vllm",
+      "prefix caching"
+    ],
+    "createdAt": "2026-04-10T11:21:07.000Z"
   }
 ]
